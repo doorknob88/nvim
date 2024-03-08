@@ -13,7 +13,4 @@ return {
     ft = { "go", "gomod" },
     build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
   },
-
-  -- vim.cmd("colorscheme kanagawa-wave")
-  -- vim.cmd("colorscheme kanagawa-dragon")
 }
