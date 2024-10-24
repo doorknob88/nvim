@@ -4,5 +4,6 @@ return {
     "rebelot/kanagawa.nvim", -- kanagawa theme
     "craftzdog/solarized-osaka.nvim", -- osaka theme
     "ellisonleao/gruvbox.nvim", -- gruvbox theme
+    "slugbyte/lackluster.nvim", -- lackluster theme
   },
 }
