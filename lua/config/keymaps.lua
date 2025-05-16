@@ -8,3 +8,5 @@ vim.keymap.set(
   ":Telescope live_grep search_dirs=.",
   { desc = "Global search from working directory" }
 )
+
+vim.api.nvim_set_keymap("i", "<C-/>", "copilot#Accept('<CR>')", { expr = true, silent = true })

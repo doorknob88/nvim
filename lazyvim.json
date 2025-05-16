@@ -3,6 +3,7 @@
     "lazyvim.plugins.extras.ai.copilot",
     "lazyvim.plugins.extras.lang.go"
   ],
+  "install_version": 7,
   "news": {
     "NEWS.md": "10960"
   },
