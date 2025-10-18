@@ -2,9 +2,4 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 --
-vim.keymap.set(
-  "n",
-  "<leader>ff",
-  ":Telescope live_grep search_dirs=.",
-  { desc = "Global search from working directory" }
-)
+-- vim.keymap.set("n", "<leader>ff", ":FzfLua live_grep", { desc = "Global search from working directory" })

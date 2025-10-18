@@ -10,9 +10,9 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
-    { "LazyVim/LazyVim",       import = "lazyvim.plugins" },
+    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     -- For LazyVim or similar setups:
-    { "neovim/nvim-lspconfig", opts = { inlay_hints = { enabled = false }, }, },
+    { "neovim/nvim-lspconfig", opts = { inlay_hints = { enabled = false } } },
 
     -- import any extras modules here
     -- { import = "lazyvim.plugins.extras.lang.typescript" },
