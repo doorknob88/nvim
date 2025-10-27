@@ -3,4 +3,4 @@ require("config.lazy")
 
 -- require("lazy").setup({})
 -- vim.cmd("colorscheme kanagawa-wave")
-vim.cmd("colorscheme tokyonight-night")
+-- vim.cmd("colorscheme tokyonight-night")
