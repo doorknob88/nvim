@@ -7,20 +7,28 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
-require("lazy").setup({
-  spec = {
-    -- add LazyVim and import its plugins
-    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    -- For LazyVim or similar setups:
-    { "neovim/nvim-lspconfig", opts = { inlay_hints = { enabled = false } } },
+local spec = {
+  -- add LazyVim and import its plugins
+  { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+  -- For LazyVim or similar setups:
+  { "neovim/nvim-lspconfig", opts = { inlay_hints = { enabled = false } } },
 
-    -- import any extras modules here
-    -- { import = "lazyvim.plugins.extras.lang.typescript" },
-    -- { import = "lazyvim.plugins.extras.lang.json" },
-    -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
-    -- import/override with your plugins
-    { import = "plugins" },
-  },
+  -- import any extras modules here
+  -- { import = "lazyvim.plugins.extras.lang.typescript" },
+  -- { import = "lazyvim.plugins.extras.lang.json" },
+  -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
+}
+
+-- load the Go extra only when the go binary is on PATH
+if vim.fn.executable("go") == 1 then
+  table.insert(spec, { import = "lazyvim.plugins.extras.lang.go" })
+end
+
+-- import/override with your plugins (must be last)
+table.insert(spec, { import = "plugins" })
+
+require("lazy").setup({
+  spec = spec,
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
     -- If you know what you're doing, you can set this to `true` to have all your custom plugins lazy-loaded by default.
